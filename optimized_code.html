@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="G:\Front_End\html_project\finaal\dsp.css"> -->
+    <title>الوعي الرقمي</title>
+    <link rel="shortcut icon" href="Media/hbuhuh-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
+
+</head>
+<style>
+    body {
+        font-family: 'Alexandria', sans-serif;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0px;
+        line-height: 1.6;
+    }
+
+    /* Tablets and larger screens */
+    @media screen and (max-width: 600px) {
+        body {
+            font-size: 18px;
+        }
+    }
+
+    /* Desktop screens */
+    @media screen and (min-width: 601px) and(max-width: 800px) {
+        body {
+            font-size: 20px;
+        }
+    }
+
+    /*header{
+    background-color: #f70303;
+    display: block;
+    margin: 0;
+    font-size: 20px;
+    color: white ;
+    z-index: 2000;
+    justify-content: space-around !important;
+    text-align: center ;
+    padding: 15px;
+    width: 100%;
+    height: 70px;
+ 
+}*/
+    header {
+        background-color: #8B0000;
+        display: flex;
+        /* Switch to Flexbox */
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+        margin: 0;
+        font-size: 20px;
+        color: white;
+        z-index: 2000;
+        text-align: center;
+        padding: 0;
+        /* Remove padding for perfect centering */
+        width: </div>100%;
+        height: 100px;
+    }
+
+    .header-img {
+        width: 100px;
+        /* عرض الصورة */
+        height: auto;
+        /*   نسبة العرض للارتفاع */
+        margin-top: -50px;
+        opacity: 0.3;
+
+
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #333333;
+        /*padding: 10px 20px;*/
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        color: white;
+    }
+
+    /* .navbar h1 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+} */
+    .navbar .nav-links {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .navbar .nav-links a {
+        /*text-decoration: none;
+    color: white;
+    font-size: 19px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    width: 25%;*/
+        text-decoration: none;
+        color: white;
+        font-size: 19px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        /*width: 22%;*/
+        align-items: center;
+        justify-content: center;
+        padding: 10px 15px;
+        justify-content: space-between;
+        /*display: block;*/
+        display: flex;
+        /* Use Flexbox for alignment */
+        background-color: #333333;
+        /* Box background color */
+        border-radius: 5px;
+        /* Optional: Rounded corners */
+        font-weight: bold;
+        /* Optional: Bold text */
+        margin: 5px;
+        /* Space between boxes */
+        width: auto;
+        /* Allow flexible box size */
+    }
+
+    .navbar .nav-links a:hover {
+        transform: scale(1.1);
+        /*color: #ffeb3b;*/
+        text-decoration: underline;
+    }
+
+    .navbar .menu-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        color: #8B0000;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        margin-left: 40px;
+    }
+
+    .navbar .menu-icon:hover {
+        transform: rotate(90deg);
+    }
+
+    .navbar .menu-icon i {
+        font-size: 24px;
+    }
+
+    /* الشريط الجانبي */
+    .sidebar {
+        position: fixed;
+        top: 50px;
+        right: -400px;
+        width: 300px;
+        height: 150vh;
+        background-color: #000000;
+        box-shadow: -5px 0 10px rgba(73, 70, 70, 0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 100;
+        overflow-y: auto;
+        height: calc(150vh - 70px);
+        /* التأكد من أن ارتفاع الشريط الجانبي يغطي باقي الشاشة بعد شريط التنقل */
+
+    }
+
+    /*.link2{
+    border-bottom: 1px solid #8B0000;
+    border-top: 1px solid #8B0000;
+}
+.link4{
+    border-bottom: 1px solid #8B0000;
+    border-top: 1px solid #8B0000;
+}*/
+
+    .sidebar.active {
+        right: 0;
+        background-color: #000000;
+        padding: 0px 10px;
+
+    }
+
+    .sidebar h4 {
+        text-align: center;
+        color: #ffffff;
+        padding: 50px 0 0 0;
+        font-size: 19px;
+    }
+
+    .sidebar a {
+        display: block;
+        text-decoration: none;
+        color: #ffffff;
+        padding: 20px 25px;
+        /*border-bottom: 1px solid #8B0000;*/
+        transition: background-color 0.3s ease-in-out;
+        overflow: hidden;
+        margin: 10px;
+        font-size: 18px;
+    }
+
+
+    .sidebar a:hover {
+        background-color: #8B0000;
+        border-radius: 5px;
+
+    }
+
+    /* الصفحة الرئيسية */
+    .container {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 70px; */
+        text-align: center;
+    }
+
+    .content {
+        display: none;
+        max-width: 600px;
+    }
+
+    .content.active {
+        display: block;
+
+    }
+
+
+    h2 {
+        font-size: 28px;
+        color: #000000;
+        margin-bottom: 20px;
+        direction: rtl;
+        /* Sets the text direction from right to left */
+        text-align: right;
+        /* Aligns text to the right */
+        padding: 70px 0 0 0;
+
+    }
+
+    h3 {
+        font-size: 25px;
+        color: #8B0000;
+        margin-bottom: 10px;
+        direction: rtl;
+        /* Sets the text direction from right to left */
+        text-align: right;
+        /* Aligns text to the right */
+
+    }
+
+    h5 {
+        font-size: 20px;
+        color: #3d2f2f;
+        margin-bottom: 10px;
+        direction: rtl;
+        /* Sets the text direction from right to left */
+        text-align: justify;
+        /* Aligns text to the right */
+
+    }
+
+    p {
+        line-height: 1.8;
+        font-size: 20px;
+        color: #000000;
+        direction: rtl;
+        /* Sets the text direction from right to left */
+        text-align: justify;
+        /* Aligns text to the right */
+
+    }
+
+    /* General styling for the menu icon */
+    #menu-icon {
+        display: none;
+        /* Initially hidden */
+        cursor: pointer;
+        font-size: 20px;
+        color: red;
+    }
+
+    /* Tab styling for better visualization */
+    .tab {
+        display: inline-block;
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .tab:hover {
+        background: darkred;
+    }
+
+    /* تنسيق الزر */
+    #chatbotButton {
+        position: fixed;
+        bottom: 20px;
+        /* المسافة من أسفل الصفحة */
+        right: 20px;
+        /* المسافة من اليمين */
+        z-index: 1000000;
+        /* تأكد أن الزر يظهر فوق المحتوى */
+    }
+
+    #chatbotButton button {
+        background-color: #ffffff;
+        color: white;
+        /* لون النص */
+        font-size: 16px;
+        padding: 8px 16px;
+        /* المسافة من جميع الأطراف داخل الزر */
+        border: none;
+        border-radius: 50px;
+        /* الشكل الدائري للزر */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* تأثير الظل */
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        /* تأثير التغيير عند التفاعل */
+    }
+
+
+    /* تغيير اللون عند التمرير فوق الزر */
+    #chatbotButton button:hover {
+        background-color: #ffffff;
+        transform: scale(1.3);
+        /* زيادة حجم الزر قليلاً عند التمرير */
+        transform: colo;
+    }
+
+    /*footer {
+    clear: both;
+    background-color: #292323;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}*/
+    .video-container {
+        width: 80%;
+        /* Adjust the width of the video container */
+        margin: 20px auto;
+        /* Center the video horizontally */
+        position: relative;
+        /* Enables further positioning (e.g., overlay text) */
+        border: 5px solid #ddd;
+        /* Optional: Add a border */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Optional: Add a shadow */
+        border-radius: 10px;
+        /* Optional: Round the corners */
+        overflow: hidden;
+        /* Ensures the video doesn't overflow the container */
+    }
+
+    .video-container video {
+        width: 100%;
+        /* Make the video take up the full container width */
+        height: auto;
+        /* Maintain aspect ratio */
+        display: block;
+        /* Remove inline spacing */
+    }
+
+    .video-container:hover video {
+        transform: scale(1.02);
+        /* Slight zoom effect on hover */
+        transition: transform 0.3s ease;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 100000;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-container>div {
+        flex: 1 1 200px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .footer-about p,
+    .footer-copyright p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-container .quicklinks {
+        font-size: 25px;
+        color: #8B0000;
+        margin-bottom: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin: 5px 0;
+    }
+
+    .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer-links ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-social a {
+        color: #fff;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+
+    .footer-social a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-copyright {
+        margin-top: 20px;
+        font-size: 12px;
+        border-top: 1px solid #555;
+        padding-top: 10px;
+    }
+
+    .nav-links a.active,
+    .sidebar a.active {
+        background-color: #8B0000;
+        /* Highlight background */
+        color: #fff;
+        /* Text color for active link */
+        font-weight: bold;
+        /* Optional: Make text bold */
+        border-radius: 5px;
+        /* Optional: Rounded corners */
+        display: block;
+        /* width: fit-content; */
+    }
+
+    .popup {
+        display: block;
+        position: fixed;
+        top: 150px;
+        /* تعديل المسافة من الأعلى */
+        left: 50%;
+        transform: translateX(-50%);
+        /* إزالة التحويل الرأسي */
+        z-index: 100001;
+        /* أعلى من الفوتر */
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .popup-content {
+        font-family: 'Amiri', serif;
+        /* تطبيق الخط الأميري على النص الرئيسي */
+
+        position: relative;
+        background-color: #fff;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    /* تنسيق النص الفرعي (الراوي) */
+    .sub-text {
+        font-size: 0.9em;
+        /* حجم النص الأصغر */
+        color: #777;
+        /* لون النص الرمادي */
+        margin-top: 10px;
+        /* المسافة بين النص الرئيسي والنص الفرعي */
+        text-align: right;
+        /* محاذاة النص إلى اليمين */
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #000;
+    }
+
+    .close-btn:hover {
+        color: red;
+    }
+
+    /* تنسيق النص المميز */
+    .highlight {
+        color: #8B0000;
+        /* لون النص */
+        font-weight: bold;
+        /* غامق */
+        text-decoration: underline;
+        /* خط تحت النص */
+    }
+
+    /* تعطيل التمرير على الجسم بشكل كامل */
+    .no-scroll {
+        overflow: hidden;
+        /* تعطيل التمرير */
+    }
+
+
+    /* الفوتر يبقى قابلًا للتمرير */
+    footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    iframe {
+        padding-top: 20px;
+    }
+
+    .responsive-video {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* نسبة العرض إلى الارتفاع 16:9 */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .responsive-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .custom-bullet-list {
+        list-style-type: none;
+        /* Remove default bullets */
+        padding-left: 20px;
+        /* Add padding to the left */
+        color: #333;
+        /* Change bullet color */
+    }
+
+    .custom-bullet-list li {
+        margin-bottom: 10px;
+        /* Add space between list items */
+        position: relative;
+        /* Add position relative */
+    }
+
+    .custom-bullet-list li::before {
+        content: "\25CF";
+        /* Unicode for square */
+        font-size: 1em;
+        /* Adjust size of the square */
+        color: #333;
+        /* Change color of the square */
+        position: absolute;
+        /* Position it absolutely */
+        right: -25px;
+        /* Adjust position to the left */
+        top: 0.3em;
+        /* Align to the top */
+    }
+
+    .custom-ordered-list {
+        color: #8B0000;
+        font-size: 25px;
+        font-family: 'Alexandria';
+        font-weight: bold;
+        list-style-type: arabic-indic;
+    }
+
+    a {
+        color: #8B0000;
+    }
+
+    #page0 img {
+        width: 180%;
+        /* Make the GIF larger than its container */
+        max-width: none;
+        /* Prevent the width from being constrained */
+        height: auto;
+        /* Maintain aspect ratio */
+        display: block;
+        /* Eliminate extra spacing */
+        position: relative;
+        left: 40%;
+        /* Position the left edge at 50% of the container */
+        /* Shift the GIF left by half its width to center it */
+    }
+</style>
+
+<body>
+
+    <header>
+        <img src="Media\fmi-removebg-preview.png" alt="Logo" class="header-img">
+
+        <h1>الوعي الرقمي</h1>
+
+    </header>
+    <!-- شريط التنقل -->
+    <div class="navbar">
+        <!-- <h2>عنوان الموقع</h2> -->
+        <div class="nav-links">
+            <a href="#video1" onclick="showPage(0)">الصفحة الرئيسية</a>
+            <a href="#" onclick="showPage(1)"> ماوراء الكواليس</a>
+            <a href="#" onclick="showPage(2)">الجانب الإيجابي </a>
+            <a href="#" onclick="showPage(3)">تحرر الآن!</a>
+        </div>
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <i>☰</i>
+        </div>
+    </div>
+
+    <!-- الشريط الجانبي -->
+    <div class="sidebar" id="sidebar" style="display: none;">
+        <h4>القائمة الجانبية</h4>
+        <a href="#1" class="link1">جذب الإنتباه</a>
+        <a href="#2" class="link2">الخصوصية</a>
+        <a href="#3" class="link3">التجسس</a>
+        <a href="#4" class="link4">انتشار الشائعات</a>
+    </div>
+
+    <!-- المحتوى -->
+    <div class="container">
+        <div id="page0" class="content active">
+            <img src="Media\Edgewise_stretched.gif">
+
+            <h2 style="color:#8B0000">التعريف بالمشروع</h2>
+            <p>
+                يعتبر الوعي الرقمي من أهم المفاهيم التي يجب على الأفراد فهمها والتعامل معها بشكل صحيح، حيث يتعلق
+                بالتفاعل الإلكتروني والتواصل الرقمي، والتي تعتبر جزءًا أساسيًا من حياتنا اليومية. يهدف هذا المشروع
+                إلى توعية الأفراد بأهمية الوعي الرقمي وتأثيره على حياتهم اليومية، وذلك من خلال تقديم معلومات ونصائح
+                تساعدهم على التعامل مع التكنولوجيا بشكل صحيح وآمن.
+                <br>
+                <strong>هذا المشروع مبني على الفيلم الوثائقي (<a href="https://thesocialdilemma.com/">The Social
+                        Dilemma</a>).</strong>
+            </p>
+            <h2>التعريف بفريق العمل</h2>
+            <ul class="custom-bullet-list">
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/mohamed-kardosha-4b8552248" target="_blank">محمد
+                                كردوشة:</a></strong>
+                        طالب في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصص في مجال علوم البيانات وتطوير نماذج
+                        الذكاء الإصطناعي.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/ahmedhamedelsaid/" target="_blank">أحمد
+                                حامد:</a></strong>
+                        طالب في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصص في إنشاء مقاطع الموشن جرافيكس.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/sarah-muhammed-774690244" target="_blank">سارة
+                                محمد:</a></strong>
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصصة في تطوير تطبيقات الويب وإنشاء المواقع.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/sara-abdelkader-1b0435343" target="_blank">سارة عبد
+                                القادر:</a></strong>
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصصة في تطوير تطبيقات الويب وإنشاء المواقع.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/hana-amr-b03777331" target="_blank">هنا
+                                عمرو:</a></strong>
+                        طالبة في كلية الهندسة قسم الإلكترونيات والإتصالات، المسؤولة عن جزء التعليق الصوتي ومهتمة بمجال
+                        علوم البيانات.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/radwa-elagamy-941131320" target="_blank">رضوى
+                                العجمي:</a></strong>
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى وعمل مجسمات
+                        الجرافيك ومهتمة بمجال الأمن السيبراني.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/nouran-elsebaie-62844924b" target="_blank">نوران
+                                محسن:</a></strong>
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a href="https://www.linkedin.com/in/basmala-muhammad-4336b4254" target="_blank">بسملة
+                                محمد:</a></strong>
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><a style="color: #8B0000; text-decoration: underline;">أروى مكي:</a></strong>
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div id="page1" class="content ">
+            <iframe src="https://www.youtube.com/embed/fetxFFiqvl0?si=pwtRsol4rUAAcnZH" width="560" height="315"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+
+
+            <h2 id="1" style="padding: 0;"> تطبيقات ومواقع التواصل الاجتماعي صُممت خصيصًا لتجذبك
+                وتبقيك متصلًا بها باستمرار.
+            </h2>
+
+            <h5 style="font-size: larger;">هل لاحظت يومًا أنك تقضي وقتًا أطول مما تخطط له
+                على مواقع التواصل الاجتماعي؟
+            </h5>
+
+            <h3>
+                الهدف
+            </h3>
+            <p>هذه التطبيقات ليست مجرد أدوات للتواصل، بل أنظمة مصممة لإبقاءك متصلًا لأطول وقت ممكن. كل نقرة وكل محتوى
+                يُعرض عليك هو جزء من خطة مدروسة لتحويل انتباهك إلى أرباح. خوارزميات ذكية تتعلم عاداتك وتُقدم لك محتوى
+                يناسب
+                اهتماماتك بدقة لتبقيك داخل الدائرة.</p>
+            <h3>
+                التصميم
+            </h3>
+            <p>التمرير اللانهائي: تجربة بلا نهاية تبقيك مستغرقًا.<br>
+                الإشعارات الحمراء: لون مُحفز نفسيًا يجعلك تتحقق فورًا.<br>
+                تصميم مُتقن: الألوان والترتيب وكل التفاصيل مصممة لجذبك وإبقاءك مشدودًا.
+            </p>
+
+            <h3>الإدمان</h3>
+            <p>ما يبدأ كتسلية قد يتحول إلى عادة تستهلك وقتك وطاقتك. تأثير هذه المنصات يتجاوز الشاشة، ليُغير طريقة تفاعلك
+                مع العالم وحتى رؤيتك لنفسك.
+            </p>
+
+
+            <h5 style="font-size: larger;">السؤال الآن: كيف يمكننا استعادة السيطرة؟ كيف يمكننا التوقف للحظة، والنظر إلى
+                تأثير
+                هذه المنصات على حياتنا بوعي أكبر؟</h5>
+
+
+            <h2 id="2"> رحلتك على الإنترنت ليست سرية كما تظن؛ كل نقرة تُسجل لتجد أمامك إعلانات مصممة
+                خصيصًا لتجذبك وتلامس اهتماماتك.
+            </h2>
+            <h3>الرحلة</h3>
+            <p> رحلتك على الإنترنت ليست عشوائية كما تظن؛ إنها تجربة تُراقب عن كثب.
+                كل نقرة تُسجل، كل بحث تُدونه، وحتى توقفك عند صورة أو فيديو لبضع ثوانٍ، يتم تحليلها لسببًا اكيدًا! وهو
+                إعلانات تُحيط بك من كل جانب، وكأنها تعرفك أكثر مما تعرف نفسك. لكن الأمر ليس مجرد صدفة
+                أو مجرد إعلانات عابرة بل خطه مدروسة. </p>
+
+            <h3>الخطة</h3>
+            <p> هذه المنصات تعمل علي تجميع أدق معلوماتك وتفاعلاتك؛ لتجذبك أكثر،
+                وتُغرقك في دائرة مغلقة من المحتوى الذي يلامس إهتماماتك.
+                ما يبدو ممتعًا أو مناسبًا هو في الحقيقة
+                مخطط لجعلك تعود مرارًا وتكرارًا.
+            </p>
+
+            <h3>الثمن</h3>
+            <p> هذا ما نقع فيه عزيزي المستخدم
+                ونظن انها خدمه مجانية، ولكن في الواقع انها تُكلّفنا الكثير.
+                ليس فقط خصوصيتنا التي تُباع وتُشترى في سوق البيانات، بل
+                أيضًا قراراتنا التي تُصبح أقل استقلالية. مع كل تفاعل،
+                نُسلم حياتنا لهذه المنصات، ونسمح لها
+                بتوجيه اختياراتنا وأفكارنا.
+            </p>
+
+            <h3>لحظة</h3>
+            <p> إذا توقفنا للحظة ونظرنا بوعي أكثر سنجد أنفسنا في عالم مُحكم، حيث الوقت، والخصوصية، والانتباه كلها أدوات
+                تُستخدم لصالح التكنولوجيا، بينما نخسر نحن ما هو أغلى: السيطرة على حياتنا....
+            </p>
+
+
+            <h5 style="font-size: larger;"> السؤال الأهم: كيف نستعيد زمام الأمور في عالم لم يُصمم لنكون فيه أحرارًا؟
+            </h5>
+
+
+            <h2 id="3"> بياناتك الشخصية كنز ثمين؛ تستغله شركات التكنولوجيا
+                الكبرى بذكاء لتحقق من خلاله أرباحًا هائلة،
+                دون أن تشعر.
+            </h2>
+
+            <p>
+                في عصر الثورة الرقمية، أصبحت البيانات الشخصية واحدة
+                من أكثر الموارد قيمة. كل نقرة، إعجاب، تعليق،
+                أو عملية بحث تقوم بها على الإنترنت تُعتبر جزءً من سلسلة بيانات أوسع، يتم جمعها وتخزينها
+                وتحليلها من قِبل شركات التكنولوجيا
+                الكبرى. هذه البيانات، رغم أنها تبدو
+                بسيطة وغير ذات قيمة للمستخدم العادي
+                ، تمثل ذهبًا رقميًا للشركات، حيث تُستخدم
+                بطرق ذكية لتحقيق أرباح طائلة.
+            </p>
+
+            <h3>كيف يتم جمع بياناتك؟
+            </h3>
+            <p>
+            <ul class="custom-bullet-list">
+                <li>
+                    <p><strong>منصات التواصل الاجتماعي:</strong>
+                        كل منشور أو صورة تشاركها، وكل حساب تتابعه، يُضاف إلى قاعدة بيانات تُظهر اهتماماتك وسلوكياتك.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>البحث والتصفح:</strong>
+                        محركات البحث مثل "جوجل" تجمع معلومات حول ما تبحث عنه، المواقع التي تزورها، وحتى المدة التي
+                        تقضيها في كل منها.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>التطبيقات والخدمات:</strong>
+                        تطبيقات الهواتف الذكية تجمع بيانات حول موقعك الجغرافي، استخدامك للتطبيق، وحتى بعض التفاصيل
+                        الحساسة مثل معدل ضربات القلب في تطبيقات الصحة.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>الشراء عبر الإنترنت:</strong>
+                        كل عملية شراء أو مراجعة تكتبها على مواقع التجارة الإلكترونية تُظهر تفضيلاتك الاستهلاكية.
+                    </p>
+                </li>
+            </ul>
+            </p>
+
+
+
+            <h3>كيف تستفيد الشركات من بياناتك؟
+            </h3>
+
+            <p>
+            <ul class="custom-bullet-list">
+                <li>
+                    <p><strong>الإعلانات الموجهة:</strong>
+                        تستخدم الشركات البيانات لتخصيص الإعلانات بما يتماشى مع اهتماماتك. إذا بحثت عن حذاء رياضي، ستجد
+                        الإعلانات
+                        عنه تُطاردك في كل مكان على الإنترنت. </p>
+                </li>
+                <li>
+                    <p><strong>تحليل السوق:</strong>
+                        تساعد البيانات الشركات في فهم أنماط الاستهلاك وتطوير منتجات جديدة أو تحسين الموجودة لتلبية
+                        احتياجات
+                        السوق بشكل أفضل.</p>
+                </li>
+                <li>
+                    <p><strong>زيادة ولاء المستخدمين:</strong>
+                        تقدم لك شركات مثل "نتفليكس" أو "أمازون" توصيات مخصصة بناءً على بياناتك، مما يعزز ارتباطك
+                        بالخدمة.</p>
+                </li>
+                <li>
+                    <p><strong>بيع البيانات لأطراف أخرى:</strong>
+                        في بعض الحالات، تُباع بيانات المستخدمين لشركات إعلانية أو مؤسسات ترغب في الوصول إلى جمهور محدد
+                        بدقة.</p>
+                </li>
+            </ul>
+            </p>
+
+            <h3>لماذا يجب أن تقلق؟</h3>
+            <p>
+                رغم أن هذه العمليات قد تبدو مفيدة لأنها تُقدم خدمات مصممة خصيصًا لك، إلا أنها تحمل مخاطر كبيرة:
+            <ul class="custom-bullet-list">
+                <li>
+                    <p><strong>الخصوصية المفقودة:</strong>
+                        البيانات التي تُجمع عنك تكشف تفاصيل دقيقة عن حياتك. </p>
+                </li>
+                <li>
+                    <p><strong>الاستخدام غير الأخلاقي:</strong>
+                        قد تُستغل بياناتك بطرق لا توافق عليها، مثل التلاعب بآرائك من خلال الإعلانات السياسية.</p>
+                </li>
+                <li>
+                    <p><strong>الأمان الرقمي:</strong>
+                        في حال تسرب البيانات، قد تصبح معلوماتك الشخصية عرضة للاختراق أو الاحتيال.</p>
+                </li>
+            </ul>
+            </p>
+
+
+
+            <h2 id="4"> انتشار الشائعات والأخبار الزائفة
+                يجعل من الصعب الوصول إلى الحقيقة وسط زخم المعلومات.
+            </h2>
+            <h3>كيف تميز بين الحقيقة والكذب في عصر الشائعات؟
+            </h3>
+            <p>في زمن تتدفق فيه المعلومات بلا توقف، أصبحت الشائعات تنتشر
+                بسرعة غير مسبوقة، مستغلة العواطف مثل الخوف والغضب. هناك دراسات
+                تشير إلى أن الأخبار الزائفة تنتشر أسرع بـ70% من الأخبار الصحيحة؛ لأنها تثير التفاعل العاطفي.
+            </p>
+
+
+            <h3>لماذا نصدق الشائعات؟
+            </h3>
+            <P>
+            <ul class="custom-bullet-list">
+                <li>
+                    <p><strong>التحيز التأكيدي:</strong> حيث نميل لتصديق ما يتماشى مع آرائنا.</p>
+                </li>
+                <li>
+                    <p><strong>خوارزميات التواصل الاجتماعي:</strong> حيث تُظهر لنا ما نحب، مما يجعل الشائعات تبدو مقنعة
+                        (التأثير السلبي للشائعات).</p>
+                </li>
+                <li>
+                    <p><strong>فقدان الثقة:</strong> حيث فقدنا الثقة في الإعلام والمؤسسات الرسمية.</p>
+                </li>
+                <li>
+                    <p><strong>تفكك اجتماعي:</strong> بسبب تعزيز الانقسامات؛ فخلال فترة الانتخابات الرئاسية الأمريكية في
+                        عام 2016، انتشرت أخبار زائفة على وسائل التواصل الاجتماعي تفيد بأن إحدى المرشحات كانت متورطة في
+                        "شبكة إجرامية سرية"، مما أثار جدلًا كبيرًا وأدى إلى انقسام داخل المجتمع.</p>
+                </li>
+                <li>
+                    <p><strong>قرارات خاطئة:</strong> بناءً على معلومات مضللة؛ فخلال جائحة كوفيد-19، انتشرت شائعات
+                        وأخبار زائفة على وسائل التواصل الاجتماعي حول علاجات غير مثبتة طبيًا، هذه المعلومات الخاطئة دفعت
+                        بعض الأشخاص إلى تبني ممارسات غير فعالة أو حتى ضارة، بينما تجاهلوا الإرشادات الطبية الموثوقة من
+                        الجهات الصحية.</p>
+                </li>
+            </ul>
+            </P>
+
+            <h3>كيف نحارب الشائعات؟
+            </h3>
+
+            <ul class="custom-bullet-list">
+                <li>
+                    <p>تحقق من المصدر قبل تصديق أو نشر أي خبر.</p>
+                </li>
+                <li>
+                    <p>لا تشارك الأخبار دون التأكد من صحتها.</p>
+                </li>
+                <li>
+                    <p>استخدم التكنولوجيا بحكمة كوسيلة للتحقق.</p>
+                </li>
+                <li>
+                    <p>في عالم مليء بالضجيج، توقف واسأل: هل هذا حقيقي؟ الحقيقة تحتاج إليك وعليك حمايتها.</p>
+                </li>
+            </ul>
+
+            <p>
+                ومثال عن التزييف الإعلامي الإسرائيلي أثناء عمليات طوفان الأقصى في أكتوبر الماضي؛ أن زعمت وسائل الإعلام
+                الإسرائيلية أن المقاومة الفلسطينية تستخدم مستشفيات غزة لتخزين الأسلحة، مستندة إلى صور ومقاطع فيديو.
+                لاحقًا؛ أثبتت تحقيقات أن الصور قديمة وغير مرتبطة بالواقع، وأكدت منظمات إنسانية أن المستشفى كان يخدم
+                المدنيين، وكان من التأثير الإعلامي أيضًا:
+            <ul class="custom-bullet-list">
+                <li>
+                    <p>تبرير القصف: ساعدت الرواية الإسرائيلية في كسب دعم عالمي وتقليل الانتقادات.</p>
+                </li>
+                <li>
+                    <p>تشويه صورة المقاومة: تصويرها كجهة تعرض المدنيين للخطر، بينما استهدف الاحتلال المنشآت الحيوية.</p>
+                </li>
+            </ul>
+            <p>
+                هذا التزييف يُبرز أهمية الوعي في كشف الحقائق
+                ومواجهة التضليل الإعلامي.</p>
+            </p>
+
+        </div>
+
+
+        <div id="page2" class="content">
+            <h2 style="padding: 0;"> ورغم كل شيء، لا يمكننا إنكار أن للتواصل
+                الاجتماعي فوائد وجوانب إيجابية تستحق الاستفادة منها.</h2>
+            <h5 style="font-size: larger;">هل تساءلت يومًا كيف أصبحت مواقع التواصل
+                الاجتماعي جزءًا أساسيًا من حياتنا؟
+                لنستعرض معًا كيف غيَّرت هذه المنصات حياتنا!
+            </h5>
+            <ol class="custom-ordered-list">
+                <li>
+                    <h3>التواصل وبناء العلاقات</h3>
+                    <p style="font-weight: 300;">مواقع التواصل جعلت العالم "قرية صغيرة"! يمكنك التحدث مع أصدقائك من أي
+                        مكان، وتكوين علاقات جديدة
+                        مع أشخاص من دول مختلفة.</p>
+                </li>
+                <li>
+                    <h3>التعبير عن الذات</h3>
+                    <p style="font-weight: 300;">هل لديك فكرة أو موهبة؟ شاركها مع العالم! هذه المنصات تمنحك الفرصة لتكون
+                        نفسك وتعبِّر عن إبداعك
+                        بسهولة.</p>
+                </li>
+                <li>
+                    <h3>التعليم والتعلُّم</h3>
+                    <p style="font-weight: 300;">من تعلم مهارات جديدة إلى حضور محاضرات، أصبح بإمكانك الوصول إلى المعرفة
+                        في أي وقت ومن أي مكان.</p>
+                </li>
+                <li>
+                    <h3>التسويق والترويج</h3>
+                    <p style="font-weight: 300;">إذا كان لديك مشروع، مواقع التواصل هي وسيلتك للتسويق والوصول إلى جمهورك
+                        بنقرة زر.</p>
+                </li>
+                <li>
+                    <h3>التسوق وشراء الاحتياجات</h3>
+                    <p style="font-weight: 300;">بنقرة واحدة، تحصل على كل ما تحتاجه ويصل إليك مباشرة إلى باب منزلك.</p>
+                </li>
+                <li>
+                    <h3>دعم القضايا الإنسانية</h3>
+                    <p style="font-weight: 300;">مواقع التواصل تمنحك فرصة لدعم القضايا الإنسانية ونقل الحقيقة، مثلما حدث
+                        مع الأحداث الأخيرة في
+                        غزة. شاهدنا كيف قامت مواقع التواصل بتغيير الوعي العالمي حول قضايا معينة، مثلما حدث مع معاناة أهل
+                        غزة. أصبح من السهل على الجميع نقل الحقيقة وتغيير وجهات النظر.</p>
+                </li>
+            </ol>
+
+            <p style="font-weight:600">في النهاية، يجب أن نتذكر أن
+                مواقع التواصل ليست مجرد وقت ضائع، بل هي أدوات للتعلم، التغيير، وتحقيق
+                الأهداف. استخدمها بحكمة لصنع فرق في حياتك وحياة الآخرين!
+            <p>
+        </div>
+
+
+
+        <div id="page3" class="content">
+            <h2 style="padding: 0;">اليوم، سأشارك معكم 5 خطوات عملية
+                وسهلة للتخلص من إدمان وسائل التواصل الاجتماعي
+                والاستمتاع بحياة أكثر هدوءً وإنتاجية. فلنبدأ!
+            </h2>
+            <ol class="custom-ordered-list">
+                <li>
+                    <h3>إلغاء الإشعارات</h3>
+                    <p style="font-weight:normal">أول خطوة هي التخلص من مصدر الإزعاج الرئيسي: الإشعارات! افتح هاتفك الآن
+                        وألغِ الإشعارات من تطبيقات
+                        التواصل الاجتماعي. سترى كيف سيصبح هاتفك هادئًا، وكيف ستشعر أنك تستعيد تركيزك تدريجيًا.</p>
+                    <h5 style="font-weight:bold">هذه الخطوة لم تُجدِ نفعًا؟ إذًا فلنقوم بالخطوة التالية</h5>
+                </li>
+                <li>
+                    <h3>وضع حد أقصى للتصفح</h3>
+                    <p style="font-weight:normal">ضع حدًا لاستخدامك لوسائل التواصل الاجتماعي. حمل تطبيقًا يساعدك في
+                        مراقبة وقت الشاشة وحدد لنفسك
+                        وقتًا يوميًا، مثل ساعتين فقط. التحدي هنا أن تلتزم! ومع الوقت، ستكتشف أنك لا تحتاج أكثر من ذلك
+                        يوميًا.</p>
+                    <h5 style="font-weight:bold">هذه لم تنفع بشيءٍ أيضًا! فلننتقل إلى الخطوة التالية</h5>
+                </li>
+                <li>
+                    <h3>حذف التطبيقات واستخدام المتصفح فقط</h3>
+                    <p style="font-weight:normal">حان الوقت لخطوة عملية أكثر: احذف تطبيقات التواصل الاجتماعي من هاتفك.
+                        نعم، احذفها! إذا كنت بحاجة
+                        للدخول، استخدم المتصفح. ستكتشف أن الأمر أصبح أصعب لتسجيل الدخول وسرعان ما ستملّ هذا الأسلوب
+                        وتترك
+                        الدخول إليها نهائيًا.</p>
+                    <h5 style="font-weight:bold">إذا لم تُجدِ هذه الخطوات نفعًا معك فلتجرب</h5>
+                </li>
+                <li>
+                    <h3>يوم بدون هاتف</h3>
+                    <p style="font-weight:normal">جرّب تحدي اليوم بدون هاتف. ستشعر في البداية أن هناك شيئًا ينقصك، لكن
+                        مع مرور الساعات، ستكتشف روعة
+                        الحياة الحقيقية. اخرج للتنزه، اقرأ كتابًا، أو اقضِ وقتًا مع العائلة والأصدقاء.</p>
+                </li>
+            </ol>
+            <h5 style="font-weight:bold">وأخيرًا؛ ابحث وتعمق في معرفة حقائق مواقع التواصل الاجتماعي وما هي أهدافها
+                وتفكَّر بعمق في تأثير
+                وسائل التواصل الاجتماعي على حياتنا وكيف تُصمم لتجعلنا مدمنين عليها.</h5>
+
+            <h5 style="font-weight:bold">جرِّب هذه الخطوات وشاركنا تجربتك
+                حياتك الحقيقية تنتظرك بعيدًا عن الشاشة!</h5>
+
+
+        </div>
+        <div id="chatbotButton" style="position:fixed; bottom:10px; right:10px;">
+            <button onclick="openChatbot()">
+                <img src="Media\icon-ezgif.com-video-to-gif-converter (1).gif" alt="Chatbot Icon"
+                    style="width: 60px; height: 60px;">
+            </button>
+        </div>
+
+
+
+        <!-- <div id="page0" class="content">
+            <img src="../../media/Edgewise.gif" style="width:200%;padding:0px;margin:0;">
+        </div> -->
+    </div>
+    <!-- <div id="page0">
+        <img src="../../media/Edgewise.gif" style="width:100%;padding:0px;margin:0;">
+    </div> -->
+
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <!-- Close Button -->
+            <span class="close-btn" onclick="closePopup()">
+                <i class="fa fa-times"></i> <!-- أيقونة الإغلاق -->
+            </span>
+            <h3> قال رسول الله ﷺ: </h3>
+            <p> لا تَزولُ قَدَمَا عَبْدٍ يومَ القيامةِ،
+                <span class="highlight"> حتَّى يُسأَلَ عن عُمُرِه؛ فيمَ أفناه؟
+                </span> وعن عِلْمِه؛
+                فيم فعَلَ فيه؟ وعن مالِه؛ من أين اكتسَبَه؟
+                وفيم أنفَقَه؟ وعن جِسمِه؛ فيمَ أبلاه؟
+            </p>
+            <p class="sub-text">رواه الترمذي (2417)، وقال: ” هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ”</p>
+            <!-- يمكنك استبدال "رواه الترمذي" بأي نص آخر -->
+
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const pages = document.querySelectorAll('.content');
+
+        // إظهار أو إخفاء الشريط الجانبي
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+        }
+
+        // عرض صفحة معينة
+        function showPage(pageIndex) {
+            pages.forEach((page, index) => {
+                page.classList.toggle('active', index === pageIndex);
+            });
+
+            // تحديث الرابط النشط في شريط التنقل العلوي
+            document.querySelectorAll('.nav-links a').forEach((link, index) => {
+                link.classList.toggle('active', index === pageIndex);
+            });
+
+            // تحديث الرابط النشط في الشريط الجانبي
+            document.querySelectorAll('.sidebar a').forEach((link, index) => {
+                link.classList.toggle('active', index === pageIndex);
+            });
+
+            // إخفاء الشريط الجانبي إذا كانت الصفحة هي الصفحة الرئيسية (يمكن تعديل الأرقام بناءً على الصفحات الخاصة بك)
+            if (pageIndex === 0 || pageIndex === 2 || pageIndex === 3) {
+                sidebar.style.display = 'none';
+            } else {
+                sidebar.style.display = 'block';
+            }
+
+            // إظهار الـ Popup فقط في الصفحة 3
+            if (pageIndex === 3 && (pageIndex != 0 || pageIndex != 1 || pageIndex != 2)) {
+                openPopup();
+            } else {
+                closePopup();
+            }
+
+        }
+
+        // فتح نافذة منبثقة
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+
+            // تعطيل التمرير للصفحة ولكن بدون التأثير على الفوتر
+            document.body.classList.add('no-scroll');
+        }
+
+        // إغلاق نافذة منبثقة
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+
+            // تمكين التمرير للصفحة
+            document.body.classList.remove('no-scroll');
+        }
+
+        // فتح الشات بوت
+        function openChatbot() {
+            window.open('https://social-dilemma-bot.streamlit.app/');
+        }
+
+
+        // إضافة مستمعين لأحداث الضغط على روابط الشريط الجانبي
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', () => {
+                // إزالة الفئة "active" من الرابط النشط الحالي
+                document.querySelector('.sidebar a.active')?.classList.remove('active');
+                link.classList.add('active');
+            });
+        });
+
+        // عند تحميل الصفحة، قم بعرض الصفحة 0
+        window.onload = function () {
+            showPage(0); // يمكنك تعديل الرقم لتحديد الصفحة الأولى التي تظهر
+        };
+
+    </script>
+    <!-- <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer> -->
+
+</body>
+
+</html>
