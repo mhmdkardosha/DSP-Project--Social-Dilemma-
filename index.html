@@ -38,6 +38,41 @@
         }
     }
 
+    @media (max-width: 768px) {
+        body {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        h2,
+        h3,
+        h5 {
+            font-size: 1.2em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+    }
+
+    /* Responsive styles for very small screens */
+    @media (max-width: 480px) {
+        body {
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        h2,
+        h3,
+        h5 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: 0.9em;
+        }
+    }
+
     /*header{
     background-color: #f70303;
     display: block;
@@ -618,18 +653,11 @@
     }
 
     #page0 img {
-        width: 180%;
-        /* Make the GIF larger than its container */
-        max-width: none;
+        max-width: 100%;
         /* Prevent the width from being constrained */
         height: auto;
         /* Maintain aspect ratio */
         display: block;
-        /* Eliminate extra spacing */
-        position: relative;
-        left: 40%;
-        /* Position the left edge at 50% of the container */
-        /* Shift the GIF left by half its width to center it */
     }
 </style>
 
@@ -743,7 +771,7 @@
                 <li>
                     <p>
                         <strong><a style="color: #8B0000; text-decoration: underline;">أروى مكي:</a></strong>
-                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى.
+                        طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء مجسمات الجرافيك.
                     </p>
                 </li>
             </ul>
