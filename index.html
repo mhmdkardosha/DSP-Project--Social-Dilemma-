@@ -102,7 +102,7 @@
         text-align: center;
         padding: 0;
         /* Remove padding for perfect centering */
-        width: </div>100%;
+        width: 100%;
         height: 100px;
     }
 
@@ -659,6 +659,59 @@
         /* Maintain aspect ratio */
         display: block;
     }
+
+    /* Additional utility classes to replace inline styles */
+    .project-title {
+        color: #8B0000;
+    }
+
+    .no-padding {
+        padding: 0;
+    }
+
+    .larger-text {
+        font-size: larger;
+    }
+
+    .light-text {
+        font-weight: 300;
+    }
+
+    .normal-weight {
+        font-weight: normal;
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
+    .heavy-text {
+        font-weight: 600;
+    }
+
+    .styled-link {
+        color: #8B0000;
+        text-decoration: underline;
+    }
+
+    .sidebar-hidden {
+        display: none;
+    }
+
+    .popup-hidden {
+        display: none;
+    }
+
+    .chatbot-fixed {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .chatbot-image {
+        width: 60px;
+        height: 60px;
+    }
 </style>
 
 <body>
@@ -684,7 +737,7 @@
     </div>
 
     <!-- الشريط الجانبي -->
-    <div class="sidebar" id="sidebar" style="display: none;">
+    <div class="sidebar sidebar-hidden" id="sidebar">
         <h4>القائمة الجانبية</h4>
         <a href="#1" class="link1">جذب الإنتباه</a>
         <a href="#2" class="link2">الخصوصية</a>
@@ -695,9 +748,9 @@
     <!-- المحتوى -->
     <div class="container">
         <div id="page0" class="content active">
-            <img src="Media\Edgewise_stretched.gif">
+            <img src="Media\Edgewise_stretched.gif" alt="الوعي الرقمي - الشعار المتحرك">
 
-            <h2 style="color:#8B0000">التعريف بالمشروع</h2>
+            <h2 class="project-title">التعريف بالمشروع</h2>
             <p>
                 يعتبر الوعي الرقمي من أهم المفاهيم التي يجب على الأفراد فهمها والتعامل معها بشكل صحيح، حيث يتعلق
                 بالتفاعل الإلكتروني والتواصل الرقمي، والتي تعتبر جزءًا أساسيًا من حياتنا اليومية. يهدف هذا المشروع
@@ -708,67 +761,59 @@
             <h2>التعريف بفريق العمل</h2>
             <ul class="custom-bullet-list">
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/mohamed-kardosha-4b8552248" target="_blank">محمد
+                    <p> <strong><a href="https://www.linkedin.com/in/mohamed-kardosha-4b8552248" target="_blank" rel="noopener">محمد
                                 كردوشة:</a></strong>
                         طالب في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصص في مجال علوم البيانات وتطوير نماذج
                         الذكاء الإصطناعي.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/ahmedhamedelsaid/" target="_blank">أحمد
+                    <p> <strong><a href="https://www.linkedin.com/in/ahmedhamedelsaid/" target="_blank" rel="noopener">أحمد
                                 حامد:</a></strong>
                         طالب في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصص في إنشاء مقاطع الموشن جرافيكس.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/sarah-muhammed-774690244" target="_blank">سارة
+                    <p> <strong><a href="https://www.linkedin.com/in/sarah-muhammed-774690244" target="_blank" rel="noopener">سارة
                                 محمد:</a></strong>
                         طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصصة في تطوير تطبيقات الويب وإنشاء المواقع.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/sara-abdelkader-1b0435343" target="_blank">سارة عبد
+                    <p> <strong><a href="https://www.linkedin.com/in/sara-abdelkader-1b0435343" target="_blank" rel="noopener">سارة عبد
                                 القادر:</a></strong>
                         طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، متخصصة في تطوير تطبيقات الويب وإنشاء المواقع.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/hana-amr-b03777331" target="_blank">هنا
+                    <p> <strong><a href="https://www.linkedin.com/in/hana-amr-b03777331" target="_blank" rel="noopener">هنا
                                 عمرو:</a></strong>
                         طالبة في كلية الهندسة قسم الإلكترونيات والإتصالات، المسؤولة عن جزء التعليق الصوتي ومهتمة بمجال
                         علوم البيانات.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/radwa-elagamy-941131320" target="_blank">رضوى
+                    <p> <strong><a href="https://www.linkedin.com/in/radwa-elagamy-941131320" target="_blank" rel="noopener">رضوى
                                 العجمي:</a></strong>
                         طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى وعمل مجسمات
                         الجرافيك ومهتمة بمجال الأمن السيبراني.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/nouran-elsebaie-62844924b" target="_blank">نوران
+                    <p> <strong><a href="https://www.linkedin.com/in/nouran-elsebaie-62844924b" target="_blank" rel="noopener">نوران
                                 محسن:</a></strong>
                         طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى.
                     </p>
                 </li>
                 <li>
-                    <p>
-                        <strong><a href="https://www.linkedin.com/in/basmala-muhammad-4336b4254" target="_blank">بسملة
+                    <p> <strong><a href="https://www.linkedin.com/in/basmala-muhammad-4336b4254" target="_blank" rel="noopener">بسملة
                                 محمد:</a></strong>
                         طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء كتابة المحتوى.
                     </p>
                 </li>
                 <li>
                     <p>
-                        <strong><a style="color: #8B0000; text-decoration: underline;">أروى مكي:</a></strong>
+                        <strong><a class="styled-link">أروى مكي:</a></strong>
                         طالبة في كلية الهندسة قسم الإتصالات والإلكترونيات، مسؤولة عن جزء مجسمات الجرافيك.
                     </p>
                 </li>
@@ -780,11 +825,11 @@
             </iframe>
 
 
-            <h2 id="1" style="padding: 0;"> تطبيقات ومواقع التواصل الاجتماعي صُممت خصيصًا لتجذبك
+            <h2 id="1" class="no-padding"> تطبيقات ومواقع التواصل الاجتماعي صُممت خصيصًا لتجذبك
                 وتبقيك متصلًا بها باستمرار.
             </h2>
 
-            <h5 style="font-size: larger;">هل لاحظت يومًا أنك تقضي وقتًا أطول مما تخطط له
+            <h5 class="larger-text">هل لاحظت يومًا أنك تقضي وقتًا أطول مما تخطط له
                 على مواقع التواصل الاجتماعي؟
             </h5>
 
@@ -809,7 +854,7 @@
             </p>
 
 
-            <h5 style="font-size: larger;">السؤال الآن: كيف يمكننا استعادة السيطرة؟ كيف يمكننا التوقف للحظة، والنظر إلى
+            <h5 class="larger-text">السؤال الآن: كيف يمكننا استعادة السيطرة؟ كيف يمكننا التوقف للحظة، والنظر إلى
                 تأثير
                 هذه المنصات على حياتنا بوعي أكبر؟</h5>
 
@@ -845,7 +890,7 @@
             </p>
 
 
-            <h5 style="font-size: larger;"> السؤال الأهم: كيف نستعيد زمام الأمور في عالم لم يُصمم لنكون فيه أحرارًا؟
+            <h5 class="larger-text"> السؤال الأهم: كيف نستعيد زمام الأمور في عالم لم يُصمم لنكون فيه أحرارًا؟
             </h5>
 
 
@@ -1026,49 +1071,49 @@
 
 
         <div id="page2" class="content">
-            <h2 style="padding: 0;"> ورغم كل شيء، لا يمكننا إنكار أن للتواصل
+            <h2 class="no-padding"> ورغم كل شيء، لا يمكننا إنكار أن للتواصل
                 الاجتماعي فوائد وجوانب إيجابية تستحق الاستفادة منها.</h2>
-            <h5 style="font-size: larger;">هل تساءلت يومًا كيف أصبحت مواقع التواصل
+            <h5 class="larger-text">هل تساءلت يومًا كيف أصبحت مواقع التواصل
                 الاجتماعي جزءًا أساسيًا من حياتنا؟
                 لنستعرض معًا كيف غيَّرت هذه المنصات حياتنا!
             </h5>
             <ol class="custom-ordered-list">
                 <li>
                     <h3>التواصل وبناء العلاقات</h3>
-                    <p style="font-weight: 300;">مواقع التواصل جعلت العالم "قرية صغيرة"! يمكنك التحدث مع أصدقائك من أي
+                    <p class="light-text">مواقع التواصل جعلت العالم "قرية صغيرة"! يمكنك التحدث مع أصدقائك من أي
                         مكان، وتكوين علاقات جديدة
                         مع أشخاص من دول مختلفة.</p>
                 </li>
                 <li>
                     <h3>التعبير عن الذات</h3>
-                    <p style="font-weight: 300;">هل لديك فكرة أو موهبة؟ شاركها مع العالم! هذه المنصات تمنحك الفرصة لتكون
+                    <p class="light-text">هل لديك فكرة أو موهبة؟ شاركها مع العالم! هذه المنصات تمنحك الفرصة لتكون
                         نفسك وتعبِّر عن إبداعك
                         بسهولة.</p>
                 </li>
                 <li>
                     <h3>التعليم والتعلُّم</h3>
-                    <p style="font-weight: 300;">من تعلم مهارات جديدة إلى حضور محاضرات، أصبح بإمكانك الوصول إلى المعرفة
+                    <p class="light-text">من تعلم مهارات جديدة إلى حضور محاضرات، أصبح بإمكانك الوصول إلى المعرفة
                         في أي وقت ومن أي مكان.</p>
                 </li>
                 <li>
                     <h3>التسويق والترويج</h3>
-                    <p style="font-weight: 300;">إذا كان لديك مشروع، مواقع التواصل هي وسيلتك للتسويق والوصول إلى جمهورك
+                    <p class="light-text">إذا كان لديك مشروع، مواقع التواصل هي وسيلتك للتسويق والوصول إلى جمهورك
                         بنقرة زر.</p>
                 </li>
                 <li>
                     <h3>التسوق وشراء الاحتياجات</h3>
-                    <p style="font-weight: 300;">بنقرة واحدة، تحصل على كل ما تحتاجه ويصل إليك مباشرة إلى باب منزلك.</p>
+                    <p class="light-text">بنقرة واحدة، تحصل على كل ما تحتاجه ويصل إليك مباشرة إلى باب منزلك.</p>
                 </li>
                 <li>
                     <h3>دعم القضايا الإنسانية</h3>
-                    <p style="font-weight: 300;">مواقع التواصل تمنحك فرصة لدعم القضايا الإنسانية ونقل الحقيقة، مثلما حدث
+                    <p class="light-text">مواقع التواصل تمنحك فرصة لدعم القضايا الإنسانية ونقل الحقيقة، مثلما حدث
                         مع الأحداث الأخيرة في
                         غزة. شاهدنا كيف قامت مواقع التواصل بتغيير الوعي العالمي حول قضايا معينة، مثلما حدث مع معاناة أهل
                         غزة. أصبح من السهل على الجميع نقل الحقيقة وتغيير وجهات النظر.</p>
                 </li>
             </ol>
 
-            <p style="font-weight:600">في النهاية، يجب أن نتذكر أن
+            <p class="heavy-text">في النهاية، يجب أن نتذكر أن
                 مواقع التواصل ليست مجرد وقت ضائع، بل هي أدوات للتعلم، التغيير، وتحقيق
                 الأهداف. استخدمها بحكمة لصنع فرق في حياتك وحياة الآخرين!
             <p>
@@ -1077,55 +1122,55 @@
 
 
         <div id="page3" class="content">
-            <h2 style="padding: 0;">اليوم، سأشارك معكم 5 خطوات عملية
+            <h2 class="no-padding">اليوم، سأشارك معكم 5 خطوات عملية
                 وسهلة للتخلص من إدمان وسائل التواصل الاجتماعي
                 والاستمتاع بحياة أكثر هدوءً وإنتاجية. فلنبدأ!
             </h2>
             <ol class="custom-ordered-list">
                 <li>
                     <h3>إلغاء الإشعارات</h3>
-                    <p style="font-weight:normal">أول خطوة هي التخلص من مصدر الإزعاج الرئيسي: الإشعارات! افتح هاتفك الآن
+                    <p class="normal-weight">أول خطوة هي التخلص من مصدر الإزعاج الرئيسي: الإشعارات! افتح هاتفك الآن
                         وألغِ الإشعارات من تطبيقات
                         التواصل الاجتماعي. سترى كيف سيصبح هاتفك هادئًا، وكيف ستشعر أنك تستعيد تركيزك تدريجيًا.</p>
-                    <h5 style="font-weight:bold">هذه الخطوة لم تُجدِ نفعًا؟ إذًا فلنقوم بالخطوة التالية</h5>
+                    <h5 class="bold-text">هذه الخطوة لم تُجدِ نفعًا؟ إذًا فلنقوم بالخطوة التالية</h5>
                 </li>
                 <li>
                     <h3>وضع حد أقصى للتصفح</h3>
-                    <p style="font-weight:normal">ضع حدًا لاستخدامك لوسائل التواصل الاجتماعي. حمل تطبيقًا يساعدك في
+                    <p class="normal-weight">ضع حدًا لاستخدامك لوسائل التواصل الاجتماعي. حمل تطبيقًا يساعدك في
                         مراقبة وقت الشاشة وحدد لنفسك
                         وقتًا يوميًا، مثل ساعتين فقط. التحدي هنا أن تلتزم! ومع الوقت، ستكتشف أنك لا تحتاج أكثر من ذلك
                         يوميًا.</p>
-                    <h5 style="font-weight:bold">هذه لم تنفع بشيءٍ أيضًا! فلننتقل إلى الخطوة التالية</h5>
+                    <h5 class="bold-text">هذه لم تنفع بشيءٍ أيضًا! فلننتقل إلى الخطوة التالية</h5>
                 </li>
                 <li>
                     <h3>حذف التطبيقات واستخدام المتصفح فقط</h3>
-                    <p style="font-weight:normal">حان الوقت لخطوة عملية أكثر: احذف تطبيقات التواصل الاجتماعي من هاتفك.
+                    <p class="normal-weight">حان الوقت لخطوة عملية أكثر: احذف تطبيقات التواصل الاجتماعي من هاتفك.
                         نعم، احذفها! إذا كنت بحاجة
                         للدخول، استخدم المتصفح. ستكتشف أن الأمر أصبح أصعب لتسجيل الدخول وسرعان ما ستملّ هذا الأسلوب
                         وتترك
                         الدخول إليها نهائيًا.</p>
-                    <h5 style="font-weight:bold">إذا لم تُجدِ هذه الخطوات نفعًا معك فلتجرب</h5>
+                    <h5 class="bold-text">إذا لم تُجدِ هذه الخطوات نفعًا معك فلتجرب</h5>
                 </li>
                 <li>
                     <h3>يوم بدون هاتف</h3>
-                    <p style="font-weight:normal">جرّب تحدي اليوم بدون هاتف. ستشعر في البداية أن هناك شيئًا ينقصك، لكن
+                    <p class="normal-weight">جرّب تحدي اليوم بدون هاتف. ستشعر في البداية أن هناك شيئًا ينقصك، لكن
                         مع مرور الساعات، ستكتشف روعة
                         الحياة الحقيقية. اخرج للتنزه، اقرأ كتابًا، أو اقضِ وقتًا مع العائلة والأصدقاء.</p>
                 </li>
             </ol>
-            <h5 style="font-weight:bold">وأخيرًا؛ ابحث وتعمق في معرفة حقائق مواقع التواصل الاجتماعي وما هي أهدافها
+            <h5 class="bold-text">وأخيرًا؛ ابحث وتعمق في معرفة حقائق مواقع التواصل الاجتماعي وما هي أهدافها
                 وتفكَّر بعمق في تأثير
                 وسائل التواصل الاجتماعي على حياتنا وكيف تُصمم لتجعلنا مدمنين عليها.</h5>
 
-            <h5 style="font-weight:bold">جرِّب هذه الخطوات وشاركنا تجربتك
+            <h5 class="bold-text">جرِّب هذه الخطوات وشاركنا تجربتك
                 حياتك الحقيقية تنتظرك بعيدًا عن الشاشة!</h5>
 
 
         </div>
-        <div id="chatbotButton" style="position:fixed; bottom:10px; right:10px;">
+        <div id="chatbotButton" class="chatbot-fixed">
             <button onclick="openChatbot()">
                 <img src="Media\icon-ezgif.com-video-to-gif-converter (1).gif" alt="Chatbot Icon"
-                    style="width: 60px; height: 60px;">
+                    class="chatbot-image">
             </button>
         </div>
 
@@ -1139,7 +1184,7 @@
         <img src="../../media/Edgewise.gif" style="width:100%;padding:0px;margin:0;">
     </div> -->
 
-    <div id="popup" class="popup" style="display: none;">
+    <div id="popup" class="popup popup-hidden">
         <div class="popup-content">
             <!-- Close Button -->
             <span class="close-btn" onclick="closePopup()">
